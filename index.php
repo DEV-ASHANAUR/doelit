@@ -17,16 +17,31 @@
 
     
 
-    $name = ['rahim','karim'];
+    // $name = ['rahim','karim'];
     
-    echo "<pre>";
-    print_r($name); //array data
+    // echo "<pre>";
+    // print_r($name); //array data
     
-    echo "</pre>";
+    // echo "</pre>";
 
-    $str = implode(',',$name);
+    // $str = implode(',',$name);
 
-    echo $str.' jegfdjf';
+    // echo $str.' jegfdjf';
+
+    // class abc{
+    //     public function info(){
+    //      $num = 0;
+    //         $num++;
+    //         return $num;
+    //     }
+    // }
+
+    // $obj = new abc();
+    // echo $obj->info().'<br>';
+    // echo $obj->info();
+
+
+
 
 
 ?>
