@@ -35,19 +35,78 @@
     //     $a++;
     // }
 
-    $value = true;
+    // $value = true;
 
-    $num = 2;
+    // $num = 2;
     
-    while($value){
-        $random = rand(1,10);
-        if($random == $num){
-            echo "Winner Winner Chiken Dinner";
-            break;
-        }else{
-            echo 'you Got '.$random. '<br>';
+    // while($value){
+    //     $random = rand(1,10);
+    //     if($random == $num){
+    //         echo "Winner Winner Chiken Dinner";
+    //         break;
+    //     }else{
+    //         echo 'you Got '.$random. '<br>';
+    //     }
+    // }
+
+    // do while loop
+
+    // $i = 0;
+    // do{
+    //     echo $i;
+    //     $i++;
+
+    // }while($i < 10);
+
+    // break , continue
+    
+    // for ($i=1; $i <= 10; $i++) { 
+    //     if($i == 4){
+    //         break;
+    //     }
+    //     echo "Number is ".$i ."<br>";
+    // }
+    
+    // for ($i=1; $i <= 10; $i++) { 
+    //     if($i == 4){
+    //         continue;
+    //     }
+    //     echo "Number is ".$i ."<br>";
+    // }
+    // nested loop
+    // 1
+    // 12
+    // 123
+    // 1234
+    // 12345
+
+    // for($i = 1; $i <= 5; $i++){
+    //     for($j = 1; $j <= $i; $j++){
+    //         echo $j;
+    //     }
+    //     echo "<br>";
+    // }
+
+    // 12345
+    // 12345
+    // 12345
+    // 12345
+    // 12345
+
+    for($i = 1; $i <= 5; $i++){
+        for($j = 1; $j <= 5; $j++){
+            echo $j;
         }
+        echo "<br>";
     }
+
+    // 12345
+    // 1234
+    // 123
+    // 12
+    // 1
+
+    
 
 
 
