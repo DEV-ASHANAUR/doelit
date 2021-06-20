@@ -36,6 +36,23 @@
 
 //    echo sum(4,6);
 
+//    function 
+
+    // function Test(){
+    //     return 'hello world';
+    //     echo 'jdsfjd';
+    // }
+
+    // echo Test();
+
+    function sum(float $a, float $b,$c):int{
+        $c = $a + $b;
+
+        return $c;
+    }
+
+    echo sum(4.5,5.8,343,354);
+
    
 
 
