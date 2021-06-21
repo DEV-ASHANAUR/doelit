@@ -106,26 +106,44 @@
     // Multidimensional array
 
 
-    $arr = [
-        ['rahim','karim','rasel'],
-        [1,2,3,4,5,6],
-        ['volvo']
-    ];
+    // $arr = [
+    //     ['rahim','karim','rasel'],
+    //     [1,2,3,4,5,6],
+    //     ['volvo']
+    // ];
 
     // $arr[]
     // echo '<pre>';
     // print_r($arr[][]);
     // echo '<pre>';
 
-    for($i = 0; $i < count($arr); $i++){
-        for($j = 0; $j < count($arr[$i]); $j++){
-            echo $arr[$i][$j].'<br>';
-        }
-        // echo '<pre>';
-        // print_r($arr[$i]).'<br>';
-        // echo '<pre>';
+    // for($i = 0; $i < count($arr); $i++){
+    //     for($j = 0; $j < count($arr[$i]); $j++){
+    //         echo $arr[$i][$j].'<br>';
+    //     }
+    //     // echo '<pre>';
+    //     // print_r($arr[$i]).'<br>';
+    //     // echo '<pre>';
 
-    }
+    // }
+
+    // explode(); // string to array
+    // implode(); //array to string
+
+    // $arr = ['cricket','football','badminton'];
+
+    // $string = implode(',',$arr);
+
+    // echo $string;
+
+    
+    // $str = "cricket,football,batminton";
+    // $array = explode(',',$str);
+    // // echo $str;
+    // print_r($array);
+
+
+
 
 
 
