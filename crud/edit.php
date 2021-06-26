@@ -1,6 +1,9 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header('location:login.php');
+    }
     require 'connection.php';
-
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $sql = "SELECT * FROM `simple` WHERE id = '$id'";
@@ -21,6 +24,7 @@
         }
         
     }
+
 
 
 ?>
@@ -81,12 +85,15 @@
                             <label for="district">Select District</label>
                             <select name="district" id="district" class="form-control">
                                 <option value="">Select One</option>
+
                                 <option value="dhaka" <?php 
                                 if($district == "dhaka"){echo 'selected';}
                                 ?>>Dhaka</option>
+
                                 <option value="faridpur" <?php 
                                 if($district == "faridpur"){echo 'selected';}
                                 ?>>Faridpur</option>
+
                                 <option value="rajbari" <?php 
                                 if($district == "rajbari"){echo 'selected';}
                                 ?> >Rajbari</option>

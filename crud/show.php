@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header('location:login.php');
+    }
     require 'connection.php';
 
     $sql = "SELECT * FROM `simple`";
@@ -22,7 +26,7 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-12">
-                <h2 class="text-center text-capitalize mb-3">simple crud <a class="btn btn-primary btn-sm" href="index.php">Insert</a></h2>
+                <h2 class="text-center text-capitalize mb-3"><a class="btn btn-danger btn-sm mr-2" onclick="javascript:return confirm('Leave This Page?')" href="logout.php">Logout </a>simple crud <a class="btn btn-primary btn-sm" href="index.php">Insert</a></h2>
                 <?php
                     if(isset($_GET['valid']) && $_GET['valid'] == 'error'){
                         ?>
@@ -63,10 +67,11 @@
 
                         <?php
                             if($result->num_rows > 0){
+                                $si = 1;
                                 while ($row = $result->fetch_object()) {
                                     ?>
                                         <tr>
-                                            <td><?php echo $row->id; ?></td>
+                                            <td><?php echo $si; ?></td>
                                             <td><?php echo $row->name; ?></td>
                                             <td><?php echo $row->email; ?></td>
                                             <td><?php echo $row->phone; ?></td>
@@ -82,6 +87,7 @@
                                             </td>
                                         </tr>
                                     <?php
+                                    $si++;
                                 }
                             }
                         

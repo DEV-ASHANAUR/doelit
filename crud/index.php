@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header('location:login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +61,11 @@
                             <label for="district">Select District</label>
                             <select name="district" id="district" class="form-control">
                                 <option value="" selected>Select One</option>
+
                                 <option value="dhaka">Dhaka</option>
+
                                 <option value="faridpur">Faridpur</option>
+
                                 <option value="rajbari">Rajbari</option>
                             </select>
                         </div>

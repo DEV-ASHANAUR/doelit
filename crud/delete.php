@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['id'])){
+        header('location:login.php');
+    }
     require 'connection.php';
 
     if(isset($_GET['id'])){
