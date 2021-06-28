@@ -8,7 +8,7 @@
             $data = htmlspecialchars($data);
             return $data;
         }
-
+        $created_by = $_POST['created_by'];
         $name = test_input($_POST['name']);
         $email = test_input($_POST['email']);
         $phone = test_input($_POST['phone']);
@@ -19,7 +19,7 @@
 
         if($name != '' && $email != '' && $phone != '' && $district != '' && $gender != '' && $hobby != '' && $message != ''){
            
-            $sql = "INSERT INTO `simple`(`name`, `email`, `phone`, `district`, `gender`, `hobby`, `message`) VALUES ('$name','$email','$phone','$district','$gender','$hobby','$message')";
+            $sql = "INSERT INTO `simple`(`created_by`,`name`, `email`, `phone`, `district`, `gender`, `hobby`, `message`) VALUES ('$created_by','$name','$email','$phone','$district','$gender','$hobby','$message')";
 
             if($con->query($sql) == true){
                 header('location:index.php?insert=success');

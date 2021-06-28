@@ -100,6 +100,9 @@
                         <textarea name="message" id="message" class="form-control" cols="10" rows="5" placeholder="Enter Message"></textarea>
                     </div>
                     <div class="form-row my-3 ">
+
+                        <input type="hidden" name="created_by" value="<?php echo $_SESSION['id'];?>" >
+
                         <input type="submit" class="btn btn-primary" name="submit" value="submit" >
 
                         <input type="reset" class="btn btn-danger ml-2"value="Reset" >
