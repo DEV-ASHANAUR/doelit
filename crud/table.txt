@@ -1,0 +1,18 @@
+ Users Table
+
+ 	col_name	dataType	length		
+1	id		int				Al
+2	user_name	varchar		30
+3	user_email	varchar		40		unique
+4	user_phone	varchar		12	
+5	date_of_bath	varchar		100
+6	user_pass	varchar		255		
+7	user_about	longText
+8	user_created_at datetime		default -> current_timestamp
+
+   Post Table
+1 	id		int			Al
+2	user_id		int		10
+3	post_title	varchar  	70
+4	post_body	longText
+5	post_created_at datetime		default -> current_timestamp

@@ -5,10 +5,10 @@
     }
     require 'connection.php';
 
-    // $sql = "SELECT * FROM `simple`";
+    // $sql = "SELECT * FROM `post` WHERE user_id = $_SESSION['id']";
     $sql = "SELECT simple.*,login.name AS log_name FROM simple INNER JOIN login ON simple.created_by = login.id";
 
-    $result = $con->query($sql);
+    $result = $con->query($sql); 
 
     $user_id = $_SESSION['id'];
 
