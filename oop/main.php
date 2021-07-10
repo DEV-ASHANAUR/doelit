@@ -49,12 +49,14 @@
     class Main{
 
         public function __construct(){
-            echo 'db connected <br>';
+            // echo 'db connected <br>';
         }
 
-        public function insert($name,$email){
-            echo $name.'<br>';
-            echo $email.'<br>';
+        public function insert(){
+            // echo $name.'<br>';
+            // echo $email.'<br>';
+
+            return true;
 
 
             
@@ -76,7 +78,10 @@
 
     }
 
-    // $obj = new Main();
+    $obj = new Main();
+
+    $status =  $obj->insert();
+    echo $status;
 
     // // $obj->test();
 
