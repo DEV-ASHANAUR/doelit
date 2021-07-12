@@ -42,7 +42,7 @@ include "Flash_data.php";
                     <?php 
                     }
                 ?>
-                <form action="insert.php" method="POST">
+                <form action="insert.php" method="POST" enctype="multipart/form-data">
                     <div class="form-row mb-2">
                         <div class="col">
                             <label for="name">Enter Name</label>
@@ -81,6 +81,12 @@ include "Flash_data.php";
 
                                 <input type="radio" value="female" id="female" name="gender">
                                 <label for="female">Female</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="">
+                                <label for="img" class="mt-2">Upload Photo</label>
+                                <input type="file" id="img" class="file-control" name="file">
                             </div>
                         </div>
                         <div class="col">

@@ -20,8 +20,8 @@ class Main{
         }
     }
     //insert data
-    public function insert($name,$email,$phone,$dist,$gender,$hobby,$message){
-        $this->sql = "INSERT INTO `simple`(`name`, `email`, `phone`, `district`, `gender`, `hobby`, `message`) VALUES ('$name','$email','$phone','$dist','$gender','$hobby','$message')";
+    public function insert($photo,$name,$email,$phone,$dist,$gender,$hobby,$message){
+        $this->sql = "INSERT INTO `simple`(`photo`,`name`, `email`, `phone`, `district`, `gender`, `hobby`, `message`) VALUES ('$photo','$name','$email','$phone','$dist','$gender','$hobby','$message')";
         $this->result = $this->con->query($this->sql);
         if($this->result == true){
             return true;
@@ -41,7 +41,26 @@ class Main{
             return false;
         }
     }
-
+    // show details
+    public function details($id){
+        $this->sql = "SELECT * FROM `simple` WHERE id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
+    //delete data
+    public function delete($id){
+        $this->sql = "DELETE FROM `simple` WHERE id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     //close connection
     public function __destruct(){
         $this->con->close();

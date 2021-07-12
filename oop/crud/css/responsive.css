@@ -1,0 +1,23 @@
+/* Extra large devices (large desktops, 1200px and up) */
+
+/* Large devices (desktops, 991px and down) */
+
+@media (max-width: 991px) {
+}
+
+/* Medium devices (tablets, 768px and down) */
+
+@media (max-width: 767px) {
+}
+
+/* Small devices (mobile, 575px and down) */
+@media (max-width: 575px) {
+    
+}
+
+/* extraSmall devices ( 400px and down) */
+@media (max-width: 400px) {
+}
+
+@media (max-width: 400px) {
+}
