@@ -21,22 +21,24 @@
 
     <link rel="stylesheet" href="css/plugins.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <!-- tostr css and js -->
+    <link rel="stylesheet" href="css/toastr.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/toastr.min.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="row my-5">
             <div class="col-12">
                 <h2 class="text-center text-capitalize mb-3">simple crud <a class="btn btn-primary btn-sm" href="index.php">Insert</a></h2>
-                <?php
-                if(isset($_SESSION['msg']['success'])){
-                    ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong class="text-center d-block"><?php echo Flass_data::show_error();?></strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    <?php 
+               <!-- tostr message -->
+               <?php
+                    if(isset($_SESSION['msg']['success'])){
+                        ?>
+                            <script type="text/javascript">
+                                toastr.success("<?php echo Flass_data::show_error();?>");
+                            </script>
+                        <?php 
                     }
                 ?>
                 <table id="datatable" class="table table-striped table-bordered" style="width:100%" >
@@ -80,7 +82,7 @@
         </div>
     </div>
     <!-- script here -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     
     <script src="js/jquery.dataTables.min.js"></script>
     <script src="js/dataTables.bootstrap4.min.js"></script> 

@@ -31,6 +31,26 @@ class Main{
             // echo 'error';
         }
     }
+    // update with photo
+    // public function update_photo($id,$fileNewName,$name,$email,$phone,$district,$gender,$hobby,$message){
+    //     $this->sql = "UPDATE `simple` SET `photo` = '$fileNewName',`name` = '$name',`email` = '$email',`phone` = '$phone',`district` = '$district',`gender` = '$gender', `hobby` = '$hobby', `message` = '$message' WHERE id = '$id'";
+    //     $this->result = $this->con->query($this->sql);
+    //     if($this->result == true){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+    // update without photo
+    public function update($id,$oldphoto,$name,$email,$phone,$district,$gender,$hobby,$message){
+        $this->sql = "UPDATE `simple` SET `photo` = '$oldphoto',`name` = '$name',`email` = '$email',`phone` = '$phone',`district` = '$district',`gender` = '$gender', `hobby` = '$hobby', `message` = '$message' WHERE id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     // show data
     public function showData(){
         $this->sql = "SELECT * FROM `simple`";
@@ -43,6 +63,16 @@ class Main{
     }
     // show details
     public function details($id){
+        $this->sql = "SELECT * FROM `simple` WHERE id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
+    // get by id 
+    public function get_data($id){
         $this->sql = "SELECT * FROM `simple` WHERE id = '$id'";
         $this->result = $this->con->query($this->sql);
         if($this->result == true){
