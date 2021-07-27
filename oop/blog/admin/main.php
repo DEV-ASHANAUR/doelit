@@ -19,6 +19,26 @@ class Main{
             die();
         }
     }
+    //profile retrive
+    public function profile_retrive($id){
+        $this->sql = "SELECT * FROM `user` WHERE user_id  = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
+    // update  profile
+    public function update_profile($id,$oldphoto,$name,$email,$about){
+        $this->sql = "UPDATE `user` SET `user_name`='$name',`user_email`='$email',`user_about`='$about',`user_photo`='$oldphoto' WHERE user_id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     //insert data
     public function reg($name,$email,$password){
         $this->sql = "INSERT INTO `user`(`user_name`,`user_email`, `user_password`) VALUES ('$name','$email','$password')";
