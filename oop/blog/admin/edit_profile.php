@@ -18,16 +18,16 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard / Edit Profile</li>
+                    <li class="breadcrumb-item active">Dashboard / Edit Profile / Change Password</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between">
                         <div class="mt-2">
                             <i class="fas fa-table me-1"></i>
-                            Edit Profile
+                            Change Password
                         </div>
                         <div>
-                            <a href="change_password" class="btn btn-primary"><i class="fas fa-key me-1"></i> Change Password</a>
+                            <a href="change_pass.php" class="btn btn-primary"><i class="fas fa-key me-1"></i> Change Password</a>
                         </div>
                     </div>
                     <div class="card-body">

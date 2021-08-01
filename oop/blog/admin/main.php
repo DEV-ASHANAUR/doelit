@@ -39,6 +39,16 @@ class Main{
             return false;
         }
     }
+    //change_pass
+    public function change_pass($pass,$id){
+        $this->sql = "UPDATE `user` SET `user_password`='$pass' WHERE user_id = '$id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
     //insert data
     public function reg($name,$email,$password){
         $this->sql = "INSERT INTO `user`(`user_name`,`user_email`, `user_password`) VALUES ('$name','$email','$password')";
@@ -52,6 +62,26 @@ class Main{
     //check email
     public function checkEmail($email){
         $this->sql = "SELECT * FROM `user` WHERE user_email  = '$email'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
+    // ------------------------------category section-------------------------------
+    public function create_catagory($cat_icon,$cat_name){
+        $this->sql = "INSERT INTO `catagory`(`cat_name`, `cat_icon`) VALUES ('$cat_name','$cat_icon')";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //get data
+    public function get_cat(){
+        $this->sql = "SELECT * FROM `catagory`";
         $this->result = $this->con->query($this->sql);
         if($this->result == true){
             return $this->result;

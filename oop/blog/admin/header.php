@@ -7,7 +7,6 @@ include "Flash_data.php";
 include 'main.php';
 $obj = new Main();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -19,15 +18,18 @@ $obj = new Main();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/datatable.min.css">
         <link href="css/styles.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="js/fontawesome.min.js"></script>
         <!-- some script  -->
         <link rel="stylesheet" href="css/toastr.css">
+        <link rel="stylesheet" href="summernote/summernote-bs4.min.css">
         <!-- <script src="js/jquery.js"></script> -->
 
         <script src="js/jquery-3.4.1.min.js"></script>
+        <!-- <script src="js/jquery.js"></script> -->
         <script src="js/toastr.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.js" integrity="sha512-Fq/wHuMI7AraoOK+juE5oYILKvSPe6GC5ZWZnvpOO/ZPdtyA29n+a5kVLP4XaLyDy9D1IBPYzdFycO33Ijd0Pg==" crossorigin="anonymous"></script>
 
         <style>
@@ -36,7 +38,7 @@ $obj = new Main();
                 display: block;
                 width: 100%;
                 text-align: center;
-                padding-top: 10px;
+                padding-top: 5px;
             }
         </style>
     </head>
@@ -77,6 +79,7 @@ $obj = new Main();
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
+
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Manage Category
@@ -85,10 +88,23 @@ $obj = new Main();
                             <div class="collapse <?php if($page == 'category'){echo 'show';}?>" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link <?php if($sub_page == 'view_category')echo 'active'; ?>" href="view_category.php">View Category</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Create Category</a>
+                                    <a class="nav-link <?php if($sub_page == 'add_category')echo 'active'; ?>" href="add_category.php">Create Category</a>
                                 </nav>
                             </div>
-                            
+
+                            <!-- manage post start -->
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Manage Post
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse <?php if($page == 'post'){echo 'show';}?>" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link <?php if($sub_page == 'view_post')echo 'active'; ?>" href="view_post.php">View Post</a>
+                                    <a class="nav-link <?php if($sub_page == 'add_post')echo 'active'; ?>" href="add_post.php">Create Post</a>
+                                </nav>
+                            </div>
+                             <!-- manage post end -->
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
