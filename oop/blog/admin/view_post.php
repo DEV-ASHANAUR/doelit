@@ -1,25 +1,25 @@
 <?php
-    $page = 'category';
-    $sub_page = 'view_category';
+    $page = 'post';
+    $sub_page = 'view_post';
     include 'header.php';
-
-    $cat_data = $obj->get_cat();
+    $author_id = $_SESSION['id'];
+    $post_data = $obj->get_post($author_id);
 ?>
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard/Category</li>
+                    <li class="breadcrumb-item active">Dashboard/post</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between">
                         <div class="mt-2">
                             <i class="fas fa-table me-1"></i>
-                            View Category
+                            View post
                         </div>
                         <div>
-                            <a href="add_category.php" class="btn btn-primary"><i class="fas fa-eye me-1"></i>Create New</a>
+                            <a href="add_post.php" class="btn btn-primary"><i class="fas fa-eye me-1"></i>Create New</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -47,25 +47,31 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Category Icon</th>
-                                    <th>Category Name</th>
+                                    <th>Post Title</th>
+                                    <th>Post Image</th>
                                     <th>Created At</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <?php
-                                if($cat_data->num_rows > 0){
+                                if($post_data->num_rows > 0){
                                     $si = 1;
-                                    while($cat = $cat_data->fetch_object()){
+                                    while($post = $post_data->fetch_object()){
                                         ?>
                                         <tr>
                                             <td><?php echo  $si; ?></td>
-                                            <td><i class="fa-2x <?php echo $cat->cat_icon; ?>" ></i></td>
-                                            <td class="text-capitalize"><?php echo $cat->cat_name; ?></td>
-                                            <td><?php echo date('M-d-Y h:i A',strtotime($cat->cat_created_at)); ?></td>
                                             <td>
-                                                <a href="#"class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                                <?php echo $post->post_title; ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?php echo 'uploads/post/'.$post->post_thumbnail; ?>" target="_blank">
+                                                <img class="img-fluid" src="<?php echo 'uploads/post/'.$post->post_thumbnail; ?>" width="150" height="150" alt="">
+                                                </a>
+                                            </td>
+                                            <td><?php echo date('M-d-Y h:i A',strtotime($post->post_created_at)); ?></td>
+                                            <td>
+                                                <a href="post_details.php?id=<?php echo $post->post_id; ?>"class="btn btn-primary"><i class="fas fa-eye"></i></a>
 
                                                 <a href="#"class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                             </td>

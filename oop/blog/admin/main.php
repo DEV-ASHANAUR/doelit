@@ -89,7 +89,37 @@ class Main{
             return false;
         }
     }
-    
+    // ------------------------------post section--------------------
+    // post_create
+    public function post_create($author_id,$cat_id,$fileNewName,$post_title,$post_body){
+        $this->sql = "INSERT INTO `post`(`author_id`, `catagory_id`, `post_title`, `post_body`, `post_thumbnail`) VALUES ('$author_id','$cat_id','$post_title','$post_body','$fileNewName')";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //get post
+    public function get_post($id){
+        $this->sql = "SELECT * FROM `post` WHERE author_id = '$id' ORDER BY post_id DESC";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
+    //get_single_post
+    public function get_single_post($post_id){
+        $this->sql = "SELECT post.*,catagory.cat_name FROM post INNER JOIN catagory ON post.catagory_id = catagory.cat_id";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
     //close connection
     public function __destruct(){
         $this->con->close();
