@@ -11,6 +11,7 @@
                 $image = $post->post_thumbnail;
                 $body = $post->post_body;
                 $category = $post->cat_name;
+                $author = $post->user_name;
             }
         }
     }
@@ -48,6 +49,8 @@
                                 <p><?php echo $title; ?></p>
                                 <h2>Post Category</h2>
                                 <p><?php echo $category; ?></p>
+                                <h2>Author</h2>
+                                <p><?php echo $author; ?></p>
                             </div>
                         </div>
                     </div>
