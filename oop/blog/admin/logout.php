@@ -2,6 +2,6 @@
     session_start();
     if(isset($_SESSION['id'])){
         session_destroy();
-        header('location:../home.html');
+        header('location:../index.php');
     }
 ?>
