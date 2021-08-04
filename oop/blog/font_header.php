@@ -21,7 +21,16 @@
 		<link rel="stylesheet" href="assets/css/main.css" />	
 		  <!-- RESPONSIVE CSS -->
 		<link rel="stylesheet" href="assets/css/responsive.css" />	
-
+		<style>
+			a.active {
+				border: 1px solid #8e8e8e;
+				color: #fff;
+				padding: 5px 10px;
+				font-size: 14px;
+				/* transition: 0.5s ease all; */
+				background:#204ecf;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -58,7 +67,7 @@
 												<a href="contact.html">CONTACT</a>
 											</li>
 											<li>
-												<a href="contact_me.html">author</a>
+												<a href="admin/index.php" target="_blank">Admin</a>
 											</li>
 										</ul>
 									</div>

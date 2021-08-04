@@ -31,7 +31,7 @@
 
         <script src="js/datatables-simple-demo.js"></script> -->
         <script>
-            function filePreview(input) {
+            function profilePreview(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
                     reader.onload = function (e) {
@@ -40,9 +40,9 @@
                 }
                 reader.readAsDataURL(input.files[0]);
                 }
-                }
+            }
                 $("#file-img").change(function () {
-                    filePreview(this);
+                    profilePreview(this);
                 });
         </script>
         <!-- //post table -->

@@ -89,6 +89,16 @@ class Main{
             return false;
         }
     }
+    //related post
+    public function related($cat_id){
+        $this->sql = "SELECT * FROM `post` WHERE catagory_id = '$cat_id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
     // ------------------------------post section--------------------
     // post_create
     public function post_create($author_id,$cat_id,$fileNewName,$post_title,$post_body){
@@ -122,6 +132,18 @@ class Main{
             return false;
         }
     }
+    // category_wise post
+    public function get_all_cat_wise_post($cat_id){
+        $this->sql = "SELECT post.*,catagory.cat_name,user.user_name,user.user_photo FROM post
+        JOIN catagory ON post.catagory_id = catagory.cat_id
+        JOIN user ON post.author_id = user.user_id WHERE catagory_id = '$cat_id'";
+        $this->result = $this->con->query($this->sql);
+        if($this->result == true){
+            return $this->result;
+        }else{
+            return false;
+        }
+    }
     //total_data
     public function total_data(){
         $this->sql = "SELECT * FROM post";
@@ -134,7 +156,7 @@ class Main{
     }
     //get_single_post
     public function get_single_post($post_id){
-        $this->sql = "SELECT post.*,catagory.cat_name,user.user_name,user.user_photo,user.user_about FROM post JOIN catagory ON post.catagory_id = catagory.cat_id JOIN user ON post.author_id = user.user_id";
+        $this->sql = "SELECT post.*,catagory.cat_id,catagory.cat_name,user.user_name,user.user_photo,user.user_about FROM post JOIN catagory ON post.catagory_id = catagory.cat_id JOIN user ON post.author_id = user.user_id WHERE post_id = '$post_id'";
         $this->result = $this->con->query($this->sql);
         if($this->result == true){
             return $this->result;

@@ -3,24 +3,15 @@
 	$get_category = $obj->get_cat();
 	//pagination code
 
-	$num_per_page=03;
-
-	if(isset($_GET["page"]))
-	{
-		$page= $_GET["page"];
-	}
-	else
-	{
-		$page=1;
-	}
-	// echo $page;
-
-	$start_from=($page-1)*03;
+    if(isset($_GET['id'])){
+        $cat_id = $_GET['id'];
+        $posts = $obj->get_all_cat_wise_post($cat_id);
+    }
 
 	// $sql="select * from employees limit $start_from,$num_per_page";
 	// $rs_result=mysql_query($sql);
 
-	$posts = $obj->get_all_post($start_from,$num_per_page);
+	
 
 ?>	
 	<!-- BANNER -->
@@ -181,7 +172,9 @@
 									</div>
 								<?php
 							}
-						}
+						}else{
+                            echo "NO POST AVAILABLE IN THIS CATEGORY";
+                        }
 					?>		
 					
 
@@ -400,71 +393,7 @@
 			</div>
 		</div>
 				<!-- PAGINATION -->
-		<div class="pagination">
-			<?php
-				$total_record = $obj->total_data();
-
-				$total_page = ceil($total_record/$num_per_page);
-			?>
-			<ul class="pagination_ul d-flex">
-			<?php
-				if($page>1)
-                {
-					?>
-						<li>
-							<a href="index.php?page=<?php echo $page-1; ?>">
-								<!-- <i class="fas fa-chevron-left"></i> -->
-								Prev
-							</a>
-						</li>
-					<?php
-                }
-
-                
-                for($i=1;$i<$total_page;$i++)
-                {
-					?>
-						<li>
-							<a class="<?php if($page == $i){echo 'active';} ?>" href="index.php?page=<?php echo $i;?>"><?php echo $i; ?></a>
-						</li>
-					<?php
-                }
-
-                if($i>$page)
-                {
-					?>
-						<li>
-							<a href="index.php?page=<?php echo $page+1; ?>">
-								<!-- <i class="fas fa-chevron-right"></i> -->
-								Next
-							</a>
-						</li>
-					<?php
-                }
-			?>
-			</ul>
-			<!-- <ul class="pagination_ul d-flex">
-				<li>
-					<a href="">
-						<i class="fas fa-chevron-left"></i>
-					</a>
-				</li>
-				<li>
-					<a href="">1</a>
-				</li>
-				<li>
-					<a href="">2</a>
-				</li>
-				<li>
-					<a href="">3</a>
-				</li>
-				<li>
-					<a href="">
-						<i class="fas fa-chevron-right"></i>
-					</a>
-				</li>
-			</ul> -->
-		</div>
+		
 		<!-- PAGINATION -->
 	</div>
 	<!-- BODY -->
